@@ -148,7 +148,7 @@ public final class Form extends JFrame  {
         c.gridx=1;
         c.gridy=5;
         Photo.addMouseListener(new DeletFieldListener(Photo));
-        Photo.addMouseListener(new ImageChooserListener(this,Photo));
+        Photo.addMouseListener(new ImageChooserListener(this,Photo,null));
         FormBackground.add(Photo,c);   
         
         c.gridx=1;

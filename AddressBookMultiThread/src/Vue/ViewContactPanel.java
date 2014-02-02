@@ -7,6 +7,7 @@
 package Vue;
 
 import Controller.HomePageLauncher;
+import Controller.ImageChooserListener;
 import Controller.MailPageLauncher;
 import Modele.Contact;
 import Vue.Window;
@@ -17,6 +18,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.ScrollPane;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -50,6 +52,7 @@ public class ViewContactPanel {
        Photo=new JPanel();
          m=new Miniature(cn.getPhoto());
         Photo.add(m.getMyMiniature());
+        Photo.addMouseListener(new ImageChooserListener(new JFrame(),null,myWindow));
         this.firstName = new JTextField(cn.getFirstName());
         this.firstName.setName("FirstName");
         this.lastName = new JTextField(cn.getLastName());
