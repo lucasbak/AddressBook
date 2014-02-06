@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JTable;
 
 /**
- *
+ *thread launched by the corresponding listener
  * @author Bakalian
  */
 public class AccurateViewListenerThread implements Runnable{
@@ -25,7 +25,7 @@ public class AccurateViewListenerThread implements Runnable{
     private JTable myTable=null;
     private final List<Contact> myContacts;
     private final ViewContactPanel displayPanel;
-    private int SelectedRow;
+    
     private final Window myWindow;
     private MouseEvent event;
     
