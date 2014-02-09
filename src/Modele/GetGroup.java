@@ -61,7 +61,10 @@ public  class GetGroup {
         
         return myGroup;
     }
-
+/**
+ * this function record in the group.csv file the name of the new gorup
+ * @param jTextField contains the name of the new group
+ */
     public void recordNewGroup(JTextField jTextField) {
         try {
             FileReader myFileReader;

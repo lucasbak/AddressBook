@@ -27,7 +27,7 @@ public class AccurateViewListenerThread implements Runnable{
     private final ViewContactPanel displayPanel;
     
     private final Window myWindow;
-    private MouseEvent event;
+    private final MouseEvent event;
     
     
     /**
@@ -59,7 +59,7 @@ public class AccurateViewListenerThread implements Runnable{
 	
  
         /**
-         * What we do is to change the content of the accurate view of the contact
+         * What we do is to change the content of the accurate view panel of the contact
          * we need to convert the index given by the jtable thanks to it rowSorterconverter
          * because avec Sorting contact the index has changed, an we need the original one
          */
@@ -80,7 +80,7 @@ public class AccurateViewListenerThread implements Runnable{
                     
                     
                     if(myWindow.getMyListofContact().get(i).getPhoto().isEmpty()==false){
-               
+               //chancinging the icone
               ImageIcon image=new ImageIcon(new ImageIcon(myWindow.getMyListofContact().get(i).getPhoto()).getImage().getScaledInstance(150,150, Image.SCALE_DEFAULT));
               displayPanel.getM().getLabel().setIcon(image);
               

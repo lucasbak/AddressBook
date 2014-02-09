@@ -6,7 +6,6 @@
 
 package Vue;
 
-import Controller.EditContactListener;
 import Controller.HomePageLauncher;
 import Controller.ImageChooserListener;
 import Controller.MailPageLauncher;
@@ -41,7 +40,7 @@ public class ViewContactPanel {
     private JTextField homepage;
     private JScrollPane scrollpanel;
     private JButton delete;
-    private Window myWindow;
+    private final Window myWindow;
     private Contact cn;
 
     /**

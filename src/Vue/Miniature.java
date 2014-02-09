@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- *
+ *class with reive a string and give in return a panel with an icon
  * @author Bakalian
  */
 public class Miniature {

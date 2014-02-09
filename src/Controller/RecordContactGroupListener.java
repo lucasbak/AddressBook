@@ -25,21 +25,24 @@ public class RecordContactGroupListener implements MouseListener{
     private final AddToGroupWindow windowtoClose;
     private final Window myRootWindow;
     private final int  idNumberRecord;
+    /**
+     * 
+     * @param adgw The window where le list of group are displayed 
+     * @param rootwindow the global window to access different variable
+     */
 
     public RecordContactGroupListener(AddToGroupWindow adgw,Window rootwindow) {
         myRootWindow=rootwindow;
         idNumberRecord=myRootWindow.getMyContactPanel().getIdNumber();
         windowtoClose=adgw;
     }
-    
+    /**
+     * so we catch the idnumber of the group
+     * @param e 
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
-    
-
-   
         GetGroupContact ggc=new GetGroupContact();
-        
-        System.out.println("TEst idNumber click little window" + idNumberRecord);
         ggc.WriteContactGroup(e.getComponent().getName(), idNumberRecord);// send the name of the group and idofContact
        this.windowtoClose.dispose();// we close the window
         

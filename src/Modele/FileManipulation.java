@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Ofeten used Class we is the interface for Reading-Writing the Contacts on the Hard Drive in the save.csv File
+ * Often used Class we is the interface for Reading-Writing the Contacts on the Hard Drive in the save.csv File
  * @author Bakalian
  */
 public class FileManipulation {
@@ -134,7 +134,11 @@ private HashMap myMap;
             return myList;
     }
     
-    
+    /**
+     * this function is very useful we send it a id number of group and it returns us the list with all contact belonging to the group
+     * @param grouptoshow
+     * @return 
+     */
     public List<Contact> getSortedContact(int grouptoshow){
         
        GetGroupContact ggg=new GetGroupContact();
@@ -142,29 +146,30 @@ private HashMap myMap;
         GetGroup gg=new GetGroup();
         List<Group> groupList=gg.getGroups(); // on a l'ensemble des groupe
         List<Contact> unSortedListContact=getContact();
-        if(grouptoshow==0){ return unSortedListContact;}
+        if(grouptoshow==0){ 
+            return unSortedListContact;}
         else {
-        List<Contact> newSortedListContact=new ArrayList<Contact>();
+            List<Contact> newSortedListContact=new ArrayList<Contact>();
     //System.out.println("grouptoshow in getSortecontac()" + grouptoshow);
-      if(myGroupContactMap.get(grouptoshow)!=null){
-          for(int j=0;j<myGroupContactMap.get(grouptoshow).size();j++){// on parcours l'arraylist de int contenue dans la hasmMap
-            
-         
-          int tmp=Integer.parseInt(myGroupContactMap.get(grouptoshow).get(j).toString());
+            if(myGroupContactMap.get(grouptoshow)!=null){
+                    for(int j=0;j<myGroupContactMap.get(grouptoshow).size();j++){
+                     /**
+                         * // on parcours l'arraylist de int contenue dans la hasmMap
+                      */  
+                        int tmp=Integer.parseInt(myGroupContactMap.get(grouptoshow).get(j).toString());
         
-          
-          for(int i=0;i<unSortedListContact.size();i++){
-              int t=Integer.parseInt(unSortedListContact.get(i).getIdNumber());
-              if(t==tmp){
+                         for(int i=0;i<unSortedListContact.size();i++){
+                                int t=Integer.parseInt(unSortedListContact.get(i).getIdNumber());
+                                if(t==tmp){
                   
-                  newSortedListContact.add(unSortedListContact.get(i));
+                                    newSortedListContact.add(unSortedListContact.get(i));
                   
-              }
-          }
+                                }
+                         }
                    
                 
-        }
-      }
+                    }
+            }
         
        return newSortedListContact;
         }

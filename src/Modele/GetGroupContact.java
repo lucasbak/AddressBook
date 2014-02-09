@@ -48,15 +48,12 @@ public class GetGroupContact {
             bf=new BufferedReader(fr);
             
             while((Line=bf.readLine())!=null){//tant qu'on lit une ligne
-               // System.out.println("Ligne de GGG Lu:" +Line);
+               
                 line=Line.split(";");// on partage la ligne en tableau de String
                 ArrayList<Integer> listofcontact=new ArrayList<>();
-                
-                
-                //System.out.println("nombre de partie dans la ligne lu  " + line.length);
+               
                 for(int j=1;j<(line.length);j++){ // pour chaque ligne lu; on ajoute le numéro du groupe et la list des contact y appartenant
                     
-                    //System.out.println("partie de la ligne lue:" +line[j]);
                     if(line[j].isEmpty()!=true){// dans la lecture de la ligne on vérifie  si on a bien un contact
                         listofcontact.add(Integer.parseInt(line[j]));    
                        

@@ -62,7 +62,7 @@ public final class Form extends JFrame  {
         ProfessionalPhone=new JTextField("telephone privee");;
         HomePage=new JTextField("site web");;
         Email=new JTextField("addresse Mail");;
-        Photo=new JTextField(" lien vers photo");;
+        Photo=new JTextField("photo.jpg");;
         age=new JTextField("votre age");;
         enregistrer=new JButton("validate");
        // myContact=currentContact;

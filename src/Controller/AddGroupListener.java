@@ -6,16 +6,13 @@
 
 package Controller;
 
-import Modele.GetGroup;
 import Vue.GroupForm;
 import Vue.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 
 /**
- *
+ *This Listener , liste the popupmenu for adding a group
  * @author Bakalian
  */
 public class AddGroupListener implements MouseListener {
@@ -25,7 +22,7 @@ public class AddGroupListener implements MouseListener {
     public AddGroupListener(GroupForm windowToClose,Window rootPane) {
         this.windowToClose = windowToClose;
         myRootWindow=rootPane;
-          System.out.println("Test");
+         
     }
     
     
@@ -33,12 +30,6 @@ public class AddGroupListener implements MouseListener {
 
     @Override
     public void mouseClicked( MouseEvent e) {
-       
-                    
-
-        
-               
-        
     }
 
     @Override
@@ -47,12 +38,7 @@ public class AddGroupListener implements MouseListener {
       Thread thread = new Thread(new Runnable(){
                     @Override
                     public void run(){
-                        
-                        
-                    GroupForm mygroupform=new GroupForm(myRootWindow);
-                    
-                   
-                            
+                    GroupForm mygroupform=new GroupForm(myRootWindow);  
                         }
                     }
                 );

@@ -27,24 +27,23 @@ public class RemoveContactGroupListener implements MouseListener{
     private final AddToGroupWindow windowtoClose;
     private final Window myRootWindow;
     private final int idNumberRemove;
-
+/**
+ * 
+ * @param adgw the window where the list is displayed
+ * @param rootwindow the root window 
+ */
     public RemoveContactGroupListener(AddToGroupWindow adgw,Window rootwindow) {
         myRootWindow=rootwindow;
         idNumberRemove=myRootWindow.getMyContactPanel().getIdNumber();
         windowtoClose=adgw;
     }
-    
+    /**
+     * we catch the id of the group to remove
+     * @param e 
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
-        
-
-      /*  TableModelContact  tmc=(TableModelContact) myTable.getModel();
         GetGroupContact ggc=new GetGroupContact();
-        String idnumber=tmc.getContactList().get(myTable.getRowSorter().convertRowIndexToModel(myTable.getSelectedRow())).getIdNumber();
-        */
-        GetGroupContact ggc=new GetGroupContact();
-        
-        System.out.println("TEst idNumber click little window" + idNumberRemove);
         ggc.DeleteContactGroup(e.getComponent().getName(), idNumberRemove);// send the name of the group and idofContact
        this.windowtoClose.dispose();// we close the window
         

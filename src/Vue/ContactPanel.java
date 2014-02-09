@@ -15,7 +15,6 @@ import Controller.HelpListener;
 import Controller.RemoveFromGroupListener;
 import Modele.TableRenderer;
 import Modele.Contact;
-import Vue.Window;
 import Modele.TableModelContact;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -68,33 +67,14 @@ public class ContactPanel {
         JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem menuItemAddToGroup = new JMenuItem("Add to Group");
         JMenuItem menuItemRemoveFromGroup = new JMenuItem("Remove from Group ");
-        JMenuItem menuItemHelp = new JMenuItem("Help");
-
-        
-        
         
         popupMenu.add(menuItemAddToGroup);
         popupMenu.add(menuItemRemoveFromGroup);
-        popupMenu.add(menuItemHelp);
-        
-        
-        
        menuItemAddToGroup.addMouseListener(new AddToGroupListener(myWindow));
        menuItemRemoveFromGroup.addMouseListener(new RemoveFromGroupListener(myWindow));
-       menuItemHelp.addMouseListener(new HelpListener());
-
-
-
         myTable.setComponentPopupMenu(popupMenu);       
  
- 
- 
- 
- 
- 
- 
- 
-         //myTable.getTableHeader().getDefaultRenderer().getTableCellRendererComponent(myTable, sorter, true, true, 0, 0).setPreferredSize(new Dimension(20,20));
+   
         myTable.getColumnModel().getColumn(0).setCellRenderer(buttonRenderer);
         myTable.getColumnModel().getColumn(0).setPreferredWidth(30);
         myTable.setRowHeight(40);

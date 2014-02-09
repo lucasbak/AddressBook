@@ -38,16 +38,23 @@ public class AddToGroupListenerThread implements Runnable{
         
      
     }
-
+/**
+ * Step by Step:
+ * we get the list og existing group
+ * we launche the window to display it
+ * we add on each jlabel (containg the name of the group) a listener to record the user choice
+ * then we launch the group listener thread to refresh the contact list
+ */
     @Override
     public void run() {
+        
         groupGetter= new GetGroup();
         grouplist=groupGetter.getGroups();
         AddToGroupWindow window=new AddToGroupWindow();
         
         GroupPanel groupPanelLittle=new GroupPanel(grouplist,myRootWindow);
         window.setContentPane(groupPanelLittle.getBackground());
-        window.setSize(150, 300);
+        window.setSize(150, 500);
         window.setVisible(true);
         
            for(int i=0;i<groupPanelLittle.getBackground().getComponents().length;i++){

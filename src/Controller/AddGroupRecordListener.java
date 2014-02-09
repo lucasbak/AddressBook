@@ -42,8 +42,6 @@ public class AddGroupRecordListener implements MouseListener {
        JButton boutton=(JButton)e.getComponent();
        
         if(boutton.getName().equals("enregistrer")){
-                    
-
         
                 Thread thread = new Thread(new Runnable(){
                     @Override
@@ -52,7 +50,7 @@ public class AddGroupRecordListener implements MouseListener {
                         windowToClose.dispose();
                    
                     GetGroup myGroupGetter=new GetGroup();
-                    myGroupGetter.recordNewGroup(windowToClose.getTextFieldName()); // we record the new group ( it's name)
+                    myGroupGetter.recordNewGroup(windowToClose.getTextFieldName()); // we record the new group ( it's name) in the group.csv file and groupcontact.csv
                     myGroupGetter=null;
                     myGroupGetter=new GetGroup();
                      myRootWindow.setMyListOfGroup(myGroupGetter.getGroups()); // we update the list of gorup in the root variables

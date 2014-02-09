@@ -7,10 +7,7 @@
 package Vue;
 
 import Controller.AddGroupListener;
-import Controller.AddToGroupListener;
 import Controller.GroupListener;
-import Controller.HelpListener;
-import Controller.RemoveFromGroupListener;
 import Controller.RemoveGroupListener;
 import Modele.Group;
 import java.awt.Color;
@@ -85,42 +82,20 @@ public class GroupPanel {
             background.setPreferredSize(new Dimension(150, 350));
         }
      
-    
+    // adding popup menu for functionalities
        JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem menuItemAddAGroup = new JMenuItem("Add a Group");
         JMenuItem menuItemRemoveFromGroup = new JMenuItem("Remove a Group ");
         
-
-        
-        
-        
         popupMenu.add(menuItemAddAGroup);
         popupMenu.add(menuItemRemoveFromGroup);
-       
-        
-        
-        
        menuItemAddAGroup.addMouseListener(new AddGroupListener(null,myRootPane));
        menuItemRemoveFromGroup.addMouseListener(new RemoveGroupListener(myRootPane));
        
        background.setComponentPopupMenu(popupMenu);  
-
-        
-      
-      
-      
-      
-        
-        
-        
-        
         
         background.setVisible(true);
         background.setAutoscrolls(true);
-        
-        
-       
-        
     }
 
     public JLabel getSelectedGroupLabel() {

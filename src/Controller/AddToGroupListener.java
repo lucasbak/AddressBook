@@ -6,27 +6,19 @@
 
 package Controller;
 
-import Modele.Group;
 import Vue.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.List;
-import javax.swing.JPopupMenu;
-import javax.swing.JTable;
 
 /**
- *this listener is called when the user click on add to group
+ *this listener is called when the user click on add to group ( popup menu contact panel)
  * we get the existing list of group, create a new window and send it the list to choose the group
  * we also add a listener in order to record the group he clicks on
  * @author Bakalian
  */
 public class AddToGroupListener implements MouseListener {
     
-    private List<Group> grouplist;
    
-    private JPopupMenu popupMenuAdd;
-    private JTable myTable;
-    private int idNumber;
     private final Window myRootWindow;
 
     public AddToGroupListener(Window window){//JPopupMenu popmenu) {
