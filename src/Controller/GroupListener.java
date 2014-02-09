@@ -14,7 +14,6 @@ import Vue.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
-import javax.swing.JPanel;
 
 /**
  *
@@ -23,11 +22,10 @@ import javax.swing.JPanel;
 public class GroupListener implements MouseListener {
 
     private List<Contact> myList;
-    private JPanel contactPanelToModify;
     private final ContactPanel contactPanel;
     private final ViewContactPanel displayPanel;
     private int selectedGroup=0;
-    private final  String groupToShowString=null;
+
     private final Window myWindow;
     
     
@@ -46,18 +44,7 @@ public class GroupListener implements MouseListener {
         Thread thread = new Thread(groupLT);
         thread.start();
         
-        /**
-         * step of the action:
-         * we get the Jlabel we clicked on to know which group he want to see
-         * we record the number & name of the group
-         * we send it to the SorteCont of Filemanipulation which returns the list of contact belonging to this group
-         * we get the model of the jtable
-         * we change it the data, to update the JTABLe if not done the jtable doesn't update
-         * 
-         * need to change the model content to update jtable
-         * don't forget to add accurate viewlistener on the new Jtable because of new model
-         * the the smae step than contact Panel
-         */
+        
         
   
         

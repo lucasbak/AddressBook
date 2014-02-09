@@ -146,7 +146,8 @@ private HashMap myMap;
         else {
         List<Contact> newSortedListContact=new ArrayList<Contact>();
     //System.out.println("grouptoshow in getSortecontac()" + grouptoshow);
-      for(int j=0;j<myGroupContactMap.get(grouptoshow).size();j++){// on parcours l'arraylist de int contenue dans la hasmMap
+      if(myGroupContactMap.get(grouptoshow)!=null){
+          for(int j=0;j<myGroupContactMap.get(grouptoshow).size();j++){// on parcours l'arraylist de int contenue dans la hasmMap
             
          
           int tmp=Integer.parseInt(myGroupContactMap.get(grouptoshow).get(j).toString());
@@ -162,7 +163,7 @@ private HashMap myMap;
                    
                 
         }
-   
+      }
         
        return newSortedListContact;
         }

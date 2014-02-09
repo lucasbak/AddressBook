@@ -68,7 +68,7 @@ public class TableModelContact extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch(columnIndex){
             case 0:
-             // System.out.println(ContactList.size());
+             
                return ContactList.get(rowIndex).getFirstName();
             case 1:
                 return ContactList.get(rowIndex).getLastName();
@@ -115,12 +115,7 @@ public class TableModelContact extends AbstractTableModel {
                 
                
              }
-        /*     System.out.println(" FirstName: " +ContactList.get(rowIndex).getFirstName() + " LastName: " +ContactList.get(rowIndex).getLastName()
-                        + "HomeAddress: " + ContactList.get(rowIndex).getHomeAddress() + "CompanyAddress: " + ContactList.get(rowIndex).getCompanyAddress() 
-                        + "PersonalPhone: " + ContactList.get(rowIndex).getPersonalPhone()+" ProfessionalPhone: " + ContactList.get(rowIndex).getProfessionalPhone()
-                        + "HomePage: " + ContactList.get(rowIndex).getHomeAddress()+"Email: "+ContactList.get(rowIndex).getEmail()
-                        +" Age: " +ContactList.get(rowIndex).getAge() +"Photo: " +ContactList.get(rowIndex).getPhoto());
-        */}
+       }
         
     }
 

@@ -38,10 +38,9 @@ public class AddressBookSecond {
         FileManipulation f=new FileManipulation();
         List<Group> lg=g.getGroups();
         List<Contact> c=f.getContact();
-       // g.getGroups();
         Window mw;
         
-        for(int i=0;i<4;i++) System.out.println(lg.get(i).getNamegroup());
+        
         mw = new Window(lg,c);
     }
 

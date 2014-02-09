@@ -55,8 +55,7 @@ public class TableRenderer implements TableCellRenderer,MouseListener  {
     public void mouseClicked(MouseEvent e) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             if(e.getSource().equals(myTable)){
-                
-                   // System.out.println("TEST CLICK DROIT");
+              
                 
             }
     }

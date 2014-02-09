@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  */
 public class GetGroupContact {
     
-    private HashMap myGroupContactMap;
+
     private FileReader fr;
     private BufferedReader bf;
     
@@ -59,7 +59,7 @@ public class GetGroupContact {
                     //System.out.println("partie de la ligne lue:" +line[j]);
                     if(line[j].isEmpty()!=true){// dans la lecture de la ligne on vérifie  si on a bien un contact
                         listofcontact.add(Integer.parseInt(line[j]));    
-                        //System.out.println("Contact N° +" + Integer.parseInt(line[j]));
+                        System.out.println("Contact N° +" + Integer.parseInt(line[j]));
                     }
                 
                     myGroupContactMap.put(i, listofcontact);      
@@ -125,7 +125,7 @@ public class GetGroupContact {
                  
                  toWrite=toWrite+ myMap.get(i).get(j) +";";
              }
-                 System.out.println(toWrite);
+                 
                  bf.write(toWrite); // writing in the buffer
                 bf.flush(); // need this line in order to send the buffer to  be writen
                 bf.newLine();
@@ -189,7 +189,7 @@ public class GetGroupContact {
                  
                  toWrite=toWrite+ myMap.get(i).get(j) +";";
              }
-                 System.out.println(toWrite);
+              
                  bf.write(toWrite); // writing in the buffer
                 bf.flush(); // need this line in order to send the buffer to  be writen
                 bf.newLine();
@@ -212,4 +212,87 @@ public class GetGroupContact {
                 
             
     }
+
+    public void deleteGroup(String text,int numberOfGroup) {
+        HashMap<Integer,ArrayList> myGroupContactMap;
+         myGroupContactMap=new HashMap<Integer,ArrayList>();
+         
+         String Line;
+         int i=1;
+         String [] line;
+        try {
+            fr=new FileReader("groupcontact.csv");
+            bf=new BufferedReader(fr);
+            
+            while((Line=bf.readLine())!=null){//tant qu'on lit une ligne
+               // System.out.println("Ligne de GGG Lu:" +Line);
+                line=Line.split(";");// on partage la ligne en tableau de String
+                ArrayList<Integer> listofcontact=new ArrayList<>();
+                
+                
+                //System.out.println("nombre de partie dans la ligne lu  " + line.length);
+                for(int j=1;j<(line.length);j++){ // pour chaque ligne lu; on ajoute le numéro du groupe et la list des contact y appartenant
+                    
+                    //System.out.println("partie de la ligne lue:" +line[j]);
+                    if(line[j].isEmpty()!=true){// dans la lecture de la ligne on vérifie  si on a bien un contact
+                        listofcontact.add(Integer.parseInt(line[j]));    
+                        //System.out.println("Contact N° +" + Integer.parseInt(line[j]));
+                    }
+                
+                    myGroupContactMap.put(i, listofcontact);      
+                }
+               
+                i++;
+            
+              }
+            bf.close();
+            fr.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GetGroupContact.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(GetGroupContact.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         myGroupContactMap.remove(numberOfGroup);
+         
+         
+         
+         
+         
+         
+         
+       
+         
+         
+       try {
+             FileWriter   fw= new FileWriter("groupcontact.csv");
+             BufferedWriter   bf=new BufferedWriter(fw);
+             int numero=1;
+            for(int a=1;a<=myGroupContactMap.size();a++){
+                if(a!=numberOfGroup){
+                    
+                    String toWrite=numero+";";
+                    for(int b=0;b<myGroupContactMap.get(a).size();b++){
+                        toWrite=toWrite +myGroupContactMap.get(a).get(b)+";";
+                    }
+                    bf.write(toWrite); // writing in the buffer
+                    bf.flush(); // need this line in order to send the buffer to  be writen
+                    if(a!=myGroupContactMap.size()){
+                        bf.newLine();
+                    }
+                    System.out.println(toWrite);
+                    
+                        }
+                numero++;
+              
+            //    bf.write(toWrite); // writing in the buffer
+           //     bf.flush(); // need this line in order to send the buffer to  be writen
+         //       bf.newLine();
+            }
+    }       catch (IOException ex) {      
+            Logger.getLogger(GetGroupContact.class.getName()).log(Level.SEVERE, null, ex);
+        }      
+
+    }
+    
 }

@@ -6,11 +6,7 @@
 
 package Controller;
 
-import Modele.Contact;
-import Vue.Form;
 import Vue.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 

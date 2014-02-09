@@ -9,7 +9,6 @@ package Controller;
 import Modele.Contact;
 import Modele.FileManipulation;
 import Vue.Window;
-import java.awt.RenderingHints.Key;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.List;
@@ -40,7 +39,7 @@ public class EditContactListener implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(final KeyEvent e) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     //System.out.println("KEYCODE "+ e.getKeyCode());
         
@@ -156,6 +155,8 @@ public class EditContactListener implements KeyListener {
                 fm.DeleteContact(listofContact);
            
             }
+            
+          
         }
     
     }

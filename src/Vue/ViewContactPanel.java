@@ -6,6 +6,7 @@
 
 package Vue;
 
+import Controller.EditContactListener;
 import Controller.HomePageLauncher;
 import Controller.ImageChooserListener;
 import Controller.MailPageLauncher;
@@ -156,6 +157,7 @@ public class ViewContactPanel {
         c.gridy=10;
         background.add(this.delete,c);
         
+      
         
     }
 

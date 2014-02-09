@@ -21,6 +21,7 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.table.TableRowSorter;
 
 /**
@@ -55,6 +56,19 @@ public class GroupListenerThread implements Runnable {
         
         
     }
+     
+     /**
+         * step of the action:
+         * we get the Jlabel we clicked on to know which group he want to see
+         * we record the number & name of the group
+         * we send it to the SorteCont of Filemanipulation which returns the list of contact belonging to this group
+         * we get the model of the jtable
+         * we change it the data, to update the JTABLe if not done the jtable doesn't update
+         * 
+         * need to change the model content to update jtable
+         * don't forget to add accurate viewlistener on the new Jtable because of new model
+         * the the smae step than contact Panel
+         */
 
     @Override
     public void run() {
@@ -75,19 +89,20 @@ public class GroupListenerThread implements Runnable {
       
        if(event!=null){  
            
-           
+           // we color in black the name of the selected group to improve confort
         for(int j=0;j<listofGroup.size();j++){
             if(tmp.getName().equals(listofGroup.get(j).getNamegroup())){
                 tmp.setForeground(Color.black);
                 tmp.setFont(new Font("Arial",1,17));
                 selectedGroup=listofGroup.get(j).getNumeroGroup();
                 groupToShowString=listofGroup.get(j).getNamegroup();
+                myWindow.getMyGroupPanel().setSelectedGroupLabel(tmp);
                 
             }
             
         }
        }
-       else{
+       else{// recolor the " all group " in a differente color for more visibility
            myWindow.getMyGroupPanel().getBackground().getComponent(1).setFont(new Font("Arial",1,12));
             myWindow.getMyGroupPanel().getBackground().getComponent(1).setForeground(Color.gray);
             selectedGroup=listofGroup.get(0).getNumeroGroup();// on envoit le group 0 qui correspond à ALL
@@ -98,13 +113,20 @@ public class GroupListenerThread implements Runnable {
       // we add those line in order to have the table updated when we delete or add a contact
       myWindow.setMyListofContact(fm.getSortedContact(selectedGroup));
       
-     myWindow.getMyContactPanel().getMyTable().setModel(new TableModelContact(myWindow.getMyListofContact()));
+      // we need this method because we have to modify the model in the Swing Event Dispatcher Thread
+      SwingUtilities.invokeLater(new Runnable(){public void run(){
+          
+          // we update the modele then update the Sorter 
+        myWindow.getMyContactPanel().getMyTable().setModel(new TableModelContact(myWindow.getMyListofContact()));
      TableRowSorter<TableModelContact> sorter = new TableRowSorter<>((TableModelContact) myWindow.getMyContactPanel().getMyTable().getModel());
      myWindow.getMyContactPanel().getMyTable().setRowSorter(sorter);
-     myWindow.getMyContactPanel().getMyTable().setRowSorter(sorter);
+   
      sorter.setSortsOnUpdates(true);
-     TableRenderer buttonRenderer = new TableRenderer();
+     TableRenderer buttonRenderer = new TableRenderer();// we renew the renderer
      myWindow.getMyContactPanel().getMyTable().getColumnModel().getColumn(0).setCellRenderer(buttonRenderer);
+    //Update the model here
+}});
+    
      
     }
     

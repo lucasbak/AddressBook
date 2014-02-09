@@ -45,7 +45,7 @@ public class AccurateViewListenerThread implements Runnable{
     public void run() {
         Point p = event.getPoint();
        myWindow.getMyContactPanel().setIdNumber(Integer.parseInt(myWindow.getMyListofContact().get(myWindow.getMyContactPanel().getMyTable().getRowSorter().convertRowIndexToModel(myWindow.getMyContactPanel().getMyTable().rowAtPoint(event.getPoint()))).getIdNumber()));
-       System.out.println("test id number AVL :" + myWindow.getMyContactPanel().getIdNumber());
+       
        int idnumber=myWindow.getMyContactPanel().getIdNumber();
        
         

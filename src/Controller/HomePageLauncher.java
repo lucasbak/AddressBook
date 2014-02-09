@@ -27,7 +27,6 @@ public class HomePageLauncher implements MouseListener{
     public HomePageLauncher(String str) {
   
        homepage=str;
-          System.out.println(homepage);
 		
     }
 

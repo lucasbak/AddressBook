@@ -42,7 +42,7 @@ public class RemoveFromGroupListenerThread implements Runnable{
         groupGetter= new GetGroup();
         grouplist=groupGetter.getGroups();
          AddToGroupWindow window=new AddToGroupWindow();
-        GroupPanel groupPanelLittle=new GroupPanel(grouplist);
+        GroupPanel groupPanelLittle=new GroupPanel(grouplist,myRootWindow);
         window.setContentPane(groupPanelLittle.getBackground());
         window.setSize(150, 300);
         window.setVisible(true);

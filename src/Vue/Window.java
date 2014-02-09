@@ -6,7 +6,6 @@
 
 package Vue;
 
-import Controller.AddressBookSecond;
 import Controller.GroupListener;
 import Modele.Contact;
 import Modele.Group;
@@ -14,13 +13,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -42,10 +35,11 @@ public class Window extends JFrame{
     private ContactPanel myContactPanel;// le panneau qui contient LEs groupes
     private ViewContactPanel myViewContactPanel;
     private List<Contact> myListofContact;
+    private List<Group> myListOfGroup;
     
     public Window (List<Group> listg,List<Contact> listc){
             //creating all the containing Panel
-       
+        
             this.menuPanel = new JPanel();
             this.contactPanel = new JPanel();
             this.displayPanel = new JPanel();
@@ -58,11 +52,12 @@ public class Window extends JFrame{
             
             
             myListofContact=listc;
+            myListOfGroup=listg;
             
             
         
             this.setFocusable(false);
-	    this.setTitle("Agenda");
+	    this.setTitle("Bakalian's AddressBook");
             this.setSize(700 ,550);
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
@@ -83,13 +78,9 @@ public class Window extends JFrame{
           
            
            
-           myGroupPanel=new GroupPanel(listg);//create a group panel which show all the groups 
+           myGroupPanel=new GroupPanel(listg,this);//create a group panel which show all the groups 
            groupPanel.add(myGroupPanel.getBackground());
-           for(int i=0;i<myGroupPanel.getBackground().getComponents().length;i++){
-            
-                 myGroupPanel.getBackground().getComponent(i).addMouseListener(new GroupListener(myContactPanel,myViewContactPanel,this));
-              
-           }
+         
                    
                    
            
@@ -120,6 +111,14 @@ public class Window extends JFrame{
             this.setContentPane(globalPanel);
             this.setVisible(true);
             
+    }
+
+    public List<Group> getMyListOfGroup() {
+        return myListOfGroup;
+    }
+
+    public void setMyListOfGroup(List<Group> myListOfGroup) {
+        this.myListOfGroup = myListOfGroup;
     }
 
   

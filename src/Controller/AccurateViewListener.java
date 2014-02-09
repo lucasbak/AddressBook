@@ -12,10 +12,7 @@ import Vue.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 import javax.swing.JTable;
-import javax.swing.SwingUtilities;
 
 /**
  *The accurate view listener is need in order to see in detail the contact the user click on

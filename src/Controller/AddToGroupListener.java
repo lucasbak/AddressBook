@@ -6,15 +6,11 @@
 
 package Controller;
 
-import Modele.GetGroup;
 import Modele.Group;
-import Vue.AddToGroupWindow;
-import Vue.GroupPanel;
 import Vue.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
-import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 
