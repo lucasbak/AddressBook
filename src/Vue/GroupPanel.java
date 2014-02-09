@@ -85,22 +85,7 @@ public class GroupPanel {
             background.setPreferredSize(new Dimension(150, 350));
         }
      
-      /* c.gridy=myList.size();
-       addGroupButton=new JButton("add Group");
-       addGroupButton.setName("Ajouter");
-       AddGroupListener buttonListener=new AddGroupListener(null,myRootPane);
-       addGroupButton.addMouseListener(buttonListener);
-       listenergroupadd=buttonListener;
-       background.add(addGroupButton,c);
-       
-        c.gridy=myList.size()+1;
-        deleteGroupButton=new JButton("Delete Selected Group");
-       deleteGroupButton.setName("Supprimer");
-       RemoveGroupListener buttonListener2=new RemoveGroupListener(myRootPane);
-       listenergroupdel=buttonListener2;
-      background.add(deleteGroupButton,c);
-      */
-        
+    
        JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem menuItemAddAGroup = new JMenuItem("Add a Group");
         JMenuItem menuItemRemoveFromGroup = new JMenuItem("Remove a Group ");
@@ -194,7 +179,7 @@ public class GroupPanel {
         c.gridheight=1;
            
         c.gridx=0;
-        System.out.println("size de la liste" + myList.size());
+        
         // each time we read a new group we create a JLabel with it's name and add it to the Panel
        for(int i =0;i<myList.size();i++){
             c.gridy=i;
@@ -241,10 +226,7 @@ public class GroupPanel {
         }
       
       
-        
-        
       
-        System.out.println(" number of component in panel" + background.getComponents().length);
         
         
         
@@ -282,7 +264,7 @@ public class GroupPanel {
         c.gridheight=1;
            
         c.gridx=0;
-        System.out.println("size de la liste" + myList.size());
+       
         // each time we read a new group we create a JLabel with it's name and add it to the Panel
        for(int i =0;i<myList.size();i++){
             c.gridy=i;
@@ -310,29 +292,11 @@ public class GroupPanel {
           
            }
            
-            // si on arrive à la fin de la liste on a plus desormais de boutton on doit le remplacer par un Jlabel
-            // du coup on doit retirer le listener ( automatique si on retire le composant directement) correspondant au boutton pour le remplacer par un grouplistener !
-            
-        /*  if(i==myList.size()-1){
-              c.gridy=i;
-             JLabel jb=new JLabel(myList.get(i).getNamegroup());
-            jb.setName(myList.get(i).getNamegroup());
-            jb.setFont(new Font("Arial",1,12));
-            jb.setForeground(Color.gray);
-            GroupListener gl=new GroupListener(myRootPane.getMyContactPanel(),myRootPane.getMyViewContactPanel(),myRootPane);
-            jb.addMouseListener(gl);
-            newlistofListener.add(gl);
-            background.add(jb,c);
-               
-           }
-          */ 
+          
+      
         }
       background.remove(myList.size());
-      
-        
-        
-      
-        System.out.println(" number of component in panel" + background.getComponents().length);
+    
         
         
         

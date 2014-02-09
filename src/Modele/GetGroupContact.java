@@ -59,7 +59,7 @@ public class GetGroupContact {
                     //System.out.println("partie de la ligne lue:" +line[j]);
                     if(line[j].isEmpty()!=true){// dans la lecture de la ligne on vérifie  si on a bien un contact
                         listofcontact.add(Integer.parseInt(line[j]));    
-                        System.out.println("Contact N° +" + Integer.parseInt(line[j]));
+                       
                     }
                 
                     myGroupContactMap.put(i, listofcontact);      
@@ -280,7 +280,7 @@ public class GetGroupContact {
                     if(a!=myGroupContactMap.size()){
                         bf.newLine();
                     }
-                    System.out.println(toWrite);
+            
                     
                         }
                 numero++;

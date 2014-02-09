@@ -8,7 +8,6 @@ package Modele;
 
 //import Controller.HomePageLauncher;
 //import Controller.MailPageLauncher;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 

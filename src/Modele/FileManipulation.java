@@ -151,11 +151,12 @@ private HashMap myMap;
             
          
           int tmp=Integer.parseInt(myGroupContactMap.get(grouptoshow).get(j).toString());
-         // System.out.println("in getSortedContact id of contact" + tmp);
+        
+          
           for(int i=0;i<unSortedListContact.size();i++){
               int t=Integer.parseInt(unSortedListContact.get(i).getIdNumber());
               if(t==tmp){
-                // System.out.println("in getSortedContact i " + i+"tmp"+tmp);  
+                  
                   newSortedListContact.add(unSortedListContact.get(i));
                   
               }
