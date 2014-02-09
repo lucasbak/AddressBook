@@ -49,7 +49,7 @@ public class EditContactListener implements KeyListener {
             /**
              * for each case , same processus
              * we see which field is modified
-             * we take the new value and put i in the corresponding contact ine the list
+             * we take the new value and put it in the corresponding contact ine the list
              * record the new list
              */
           

@@ -113,7 +113,7 @@ public class GroupListenerThread implements Runnable {
       // we add those line in order to have the table updated when we delete or add a contact
       myWindow.setMyListofContact(fm.getSortedContact(selectedGroup));
       
-      // we need this method because we have to modify the model in the Swing Event Dispatcher Thread
+      // we need this method because we have to modify the model in the Swing Event Dispatcher Thread to avoid exceptions
       SwingUtilities.invokeLater(new Runnable(){public void run(){
           
           // we update the modele then update the Sorter 

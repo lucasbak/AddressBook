@@ -21,6 +21,11 @@ public class AddGroupRecordListener implements MouseListener {
     private final GroupForm windowToClose;
     private final Window myRootWindow;
 
+    /**
+     * 
+     * @param windowToClose the window where we wrote the name of the new group has to be disposed so we take it as a parameter
+     * @param rootPane the global pane to have access to root variables
+     */
     public AddGroupRecordListener(GroupForm windowToClose,Window rootPane) {
         this.windowToClose = windowToClose;
         myRootWindow=rootPane;
@@ -47,11 +52,11 @@ public class AddGroupRecordListener implements MouseListener {
                         windowToClose.dispose();
                    
                     GetGroup myGroupGetter=new GetGroup();
-                    myGroupGetter.recordNewGroup(windowToClose.getTextFieldName());
+                    myGroupGetter.recordNewGroup(windowToClose.getTextFieldName()); // we record the new group ( it's name)
                     myGroupGetter=null;
                     myGroupGetter=new GetGroup();
-                     myRootWindow.setMyListOfGroup(myGroupGetter.getGroups());
-                     myRootWindow.getMyGroupPanel().changeList();
+                     myRootWindow.setMyListOfGroup(myGroupGetter.getGroups()); // we update the list of gorup in the root variables
+                     myRootWindow.getMyGroupPanel().changeList();// wwe update the view
                     }    
                     
                 } );

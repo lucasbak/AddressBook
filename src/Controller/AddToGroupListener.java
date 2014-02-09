@@ -50,18 +50,7 @@ public class AddToGroupListener implements MouseListener {
         Thread thread=new Thread(aTGLT);
         thread.start();
         
-      /*AddToGroupWindow window=new AddToGroupWindow();
-        GroupPanel groupPanelLittle=new GroupPanel(grouplist);
-        window.setContentPane(groupPanelLittle.getBackground());
-        window.setSize(150, 300);
-        window.setVisible(true);
-        
-           for(int i=0;i<groupPanelLittle.getBackground().getComponents().length;i++){
-             // need to add this Listener to effectively record the group chosen for the contact chosen
-                 groupPanelLittle.getBackground().getComponent(i).addMouseListener(new RecordContactGroupListener(window,myRootWindow));
-              
-           }
-        */
+      
       
     }
 

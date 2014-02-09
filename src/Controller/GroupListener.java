@@ -29,7 +29,12 @@ public class GroupListener implements MouseListener {
     private final Window myWindow;
     
     
-   // public GroupListener (JPanel c){
+   /**
+    * 
+    * @param c the contact panel ( the middle ) to be able to change it's datamodel ( to update it )
+    * @param vpc( the right panel) to load a contact by default 
+    * @param w the root window
+    */
      public GroupListener( ContactPanel c,ViewContactPanel vpc,Window w) {
      //contactPanelToModify=c;
         displayPanel=vpc;

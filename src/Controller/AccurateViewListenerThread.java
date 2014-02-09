@@ -30,7 +30,13 @@ public class AccurateViewListenerThread implements Runnable{
     private MouseEvent event;
     
     
-    
+    /**
+     * 
+     * @param t mytable to have access to the model and renderer
+     * @param w the global window to have access to the rootvariables
+     * @param display The right panel where we see the contact in details
+     * @param e the event to take care
+     */
      public AccurateViewListenerThread (JTable t,Window w,ViewContactPanel display,MouseEvent e){
         myTable=t;
         displayPanel=display;

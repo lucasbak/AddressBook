@@ -6,10 +6,8 @@
 
 package Vue;
 
-import Controller.AddGroupListener;
 import Controller.AddGroupRecordListener;
 import Controller.DeletFieldListener;
-import Controller.EditContactListener;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,7 +26,10 @@ public class GroupForm extends JFrame{
     private JButton validate;
     private final Window myRootWindow;
     
-    
+    /**
+     * We add juste 2 part a button to validate and a JTextField to have the name
+     * @param w the global window to be able to access every element
+     */
     
     public GroupForm(Window w){
         
