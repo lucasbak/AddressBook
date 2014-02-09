@@ -72,7 +72,7 @@ private HashMap myMap;
         int newnumber=Integer.parseInt(tmp.get(taille-1).getIdNumber())+1;
         String towrite=c.getFirstName()+";"+c.getLastName()+";"+c.getHomeAddress()+";"+c.getNotes()
                         +";"+c.getPersonalPhone()+";"+c.getProfessionalPhone()+";"+c.getHomePage()+";"+c.getEmail()+";"+c.getPhoto()+";"+c.getAge()+";"+newnumber ;
-      // System.out.println(towrite);
+   
         ec.newLine();
         ec.write(towrite); // writing in the buffer
         ec.flush(); // need this line in order to send the buffer to  be writen

@@ -46,12 +46,12 @@ public class GroupForm extends JFrame{
         background=new JPanel();
         background.setLayout(new GridLayout());
        
-        background.add(new JLabel("Type the name of the new group \n then type Enter"));
+        background.add(new JLabel("Type the name of the new group \n "));
         background.add(name);
         background.add(validate);
         this.setContentPane(background);
         this.setVisible(true);
-        this.setSize(200,200);
+        this.setSize(900,100);
         name.requestFocus();
         
     
